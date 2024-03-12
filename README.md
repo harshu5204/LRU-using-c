@@ -4,41 +4,33 @@ LRU cache policy:
 LRU (Least Recently Used) cache policy is a popular caching strategy used in computer systems to manage the contents of a cache. The basic idea behind LRU is to keep track of the order in which items are accessed in the cache and evict the least recently used item when the cache reaches its maximum capacity.
 
 Here's how LRU cache policy typically works:
-
     Tracking Access:
         When an item is accessed (read or written) in the cache, it is considered the most recently used item.
         The LRU policy maintains a record of the access order of items.
-
     Cache Maintenance:
         As the cache becomes full and a new item needs to be added, the LRU policy identifies and removes the least recently used item.
         This eviction ensures that the cache remains within its capacity limit.
-
     Updating Access Order:
         When an item already present in the cache is accessed again, it becomes the most recently used item.
         The LRU policy updates the access order, pushing the recently accessed item to the front of the order.
-
     Data Structures:
         Implementing LRU often involves the use of data structures such as a doubly linked list and a hash map.
         The linked list keeps track of the order of items, with the most recently used item at the front and the least recently used item at the end.
         The hash map allows quick lookup to determine whether an item is present in the cache and, if so, its corresponding node in the linked list.
-
     Complexity:
         While LRU is effective in preventing the cache from becoming stale with outdated or less frequently used data, implementing it efficiently may involve more complex data structures and operations.
 
 LRU caching is commonly used in various applications, including databases, web servers, and file systems, where it helps improve performance by keeping frequently accessed data readily available in a limited-size cache.
-
 The given code implements a simple Least Recently Used (LRU) cache policy using a combination of a Doubly Linked List, Binary Search Tree (BST), and a Binary Search Tree for Recording Application Usage.
 
 Data Structures Used:
-
-    Doubly Linked List:
+Doubly Linked List:
         Purpose: Used for implementing the cache, with the most recently accessed element at the head and the least recently accessed at the tail.
         Operations:
             insertList: Inserts a new element at the head of the linked list.
             deleteLastList: Deletes the last (least recently used) element from the linked list.
             print: Prints the elements of the linked list.
-
-    Binary Search Tree (BST):
+Binary Search Tree (BST):
         Purpose: Used for maintaining the cache with a specific application name and its corresponding address in the linked list.
         Operations:
             insertBST: Inserts a new node in the BST with the application name and its address in the linked list.
@@ -47,7 +39,6 @@ Data Structures Used:
             heightBST: Calculates the height of the BST.
             pred: Finds the predecessor node in the BST.
             succ: Finds the successor node in the BST.
-
     Binary Search Tree for Recording Application Usage:
         Purpose: Used for recording the usage statistics of each application, including hits and misses.
         Operations:
@@ -56,8 +47,7 @@ Data Structures Used:
             Record_print: Prints the summary of application usage, including cache hits and misses.
 
 Main Function:
-
-    The main function simulates the LRU cache policy by taking user input and performing cache operations accordingly.
+ The main function simulates the LRU cache policy by taking user input and performing cache operations accordingly.
     Users can:
         Access an application (simulating a cache request).
         Display the current cache blocks.
